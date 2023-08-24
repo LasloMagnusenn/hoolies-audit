@@ -48,12 +48,12 @@ contract HooliesNFT is ERC721AQueryable, DefaultOperatorFilterer, Ownable, Reent
     string memory _tokenSymbol,
     uint256 _maxSupply,
     uint256 _maxMintAmountPerTx,
-    address _HooliesTokenTest
+    address _HooliesToken
   ) ERC721A(_tokenName, _tokenSymbol) {
     maxSupply = _maxSupply;
     setMaxMintAmountPerTx(_maxMintAmountPerTx);
     mintStartTimestamp = block.timestamp - 70;
-    HooliesToken = IHooliesToken(_HooliesTokenTest);
+    HooliesToken = IHooliesToken(_HooliesToken);
     setDailyPrices(dayPricesStruct(0.05 ether,0.055 ether,0.06 ether,0.065 ether,0.07 ether,0.075 ether,0.08 ether,0.085 ether,0.09 ether,0.095 ether,0.1 ether,0.1 ether));
     setDayTokenAccrualRate(dayTokenAccrualRateStruct(30000,29000,28000,27000,26000,25000,24000,23000,22000,21000,20000,20000));
     getAddress = 0x876B2c9e4494c2674DAaBed16c2760222c71f4C7;
